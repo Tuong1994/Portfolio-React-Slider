@@ -1,0 +1,54 @@
+.translate {
+  position: relative;
+  .translate__selection {
+    cursor: pointer;
+    user-select: none;
+    transition: all $medium $function;
+  }
+  .translate__selection--dark {
+    color: $tPrimary;
+  }
+  .translate__selection--light {
+    color: $tSecondary;
+  }
+  .translate__dropdown {
+    width: $w-10 * 12;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all $fast $function;
+    .dropdown__item {
+      padding: $p-10 $p-10 * 2;
+      margin: $m-10 0;
+      font-size: $body-2;
+      cursor: pointer;
+      transition: all $medium $function;
+    }
+  }
+  .translate__dropdown--dark {
+    background: $secondary;
+    .dropdown__item {
+      color: $tSecondary;
+      &:hover {
+        background: $primary;
+        color: $tPrimary;
+      }
+    }
+  }
+  .translate__dropdown--light {
+    background: $primary;
+    .dropdown__item {
+      color: $tPrimary;
+      &:hover {
+        background: $secondary;
+        color: $tSecondary;
+      }
+    }
+  }
+  .translate__dropdown--active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

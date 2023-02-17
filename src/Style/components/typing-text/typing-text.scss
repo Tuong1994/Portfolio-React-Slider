@@ -1,0 +1,67 @@
+.typing-text {
+  max-width: max-content;
+  height: $h-10 * 5;
+  .typing-text__wrapper {
+    height: $h-100;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    .wrapper__text {
+      font-size: $h1;
+      line-height: $h-10 * 5;
+      transition: all $medium $function;
+      @include respond(tablet) {
+        font-size: $h5;
+        line-height: $h-10 * 2.5;
+      }
+    }
+    .wrapper__line {
+      content: "";
+      width: 3px;
+      height: $h-100;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all $medium $function;
+      animation: blink 1s infinite linear;
+    }
+  }
+  .typing-text__wrapper--dark {
+    .wrapper__text {
+      color: $tPrimary;
+    }
+  }
+  .typing-text__wrapper--light {
+    .wrapper__text {
+      color: $tSecondary;
+    }
+  }
+  @include respond(tablet) {
+    height: $h-10 * 2.5;
+  }
+}
+
+// THEME
+.typing-text {
+  .typing-text__wrapper {
+    .wrapper__line--green {
+      background: $green-1;
+    }
+    .wrapper__line--red {
+      background: $red-1;
+    }
+
+    .wrapper__line--purple {
+      background: $purple-1;
+    }
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

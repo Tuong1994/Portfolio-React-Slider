@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", cursive;
+  font-size: $body-1;
+  color: $tPrimary;
+}
+
+input,
+button {
+  outline: none;
+}

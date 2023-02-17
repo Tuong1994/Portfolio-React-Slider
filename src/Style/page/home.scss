@@ -1,0 +1,208 @@
+.home {
+  height: $h-100;
+  padding: $p-10 * 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    width: $w-100;
+    height: $h-100;
+    position: absolute;
+    top: 0;
+    right: 0;
+    clip-path: polygon(100% 0, 0 0, 100% 60%);
+    z-index: -1;
+    transition: all $medium $function;
+  }
+  .home__content {
+    width: $w-100 - 40;
+    .content__title {
+      .title__text {
+        font-size: $h1;
+        transition: all $medium $function;
+        &:nth-child(1) {
+          margin-right: $m-10;
+        }
+        &:nth-child(2) {
+          font-size: $h1 + 10;
+          font-weight: $bold;
+        }
+      }
+    }
+    .content__inner {
+      margin: $m-10 * 2 0;
+      transition: all $medium $function;
+    }
+    // MODE
+    .title__text--dark,
+    .content__inner--dark {
+      color: $tPrimary;
+    }
+    .title__text--light,
+    .content__inner--light {
+      color: $tSecondary;
+    }
+    .content__download {
+      display: block;
+      max-width: max-content;
+      text-decoration: none;
+      border: 1px solid transparent;
+      margin-top: $m-10 * 2;
+      padding: $p-10 $p-10 * 2;
+      transition: all $medium $function;
+      .download__text {
+        font-size: $h6;
+        margin-right: $m-10;
+      }
+      .download__icon {
+        font-size: $h6;
+      }
+    }
+  }
+  .home__image {
+    width: $w-100 - 60;
+    display: flex;
+    justify-content: center;
+    .image__view {
+      width: $w-10 * 25;
+      height: $h-10 * 25;
+      object-fit: cover;
+      object-position: center;
+      border-top-left-radius: $circle;
+      border-bottom-right-radius: $circle;
+    }
+  }
+}
+
+// THEME
+.home {
+  .home__content {
+    .content__title {
+      .title__text--green {
+        &:nth-child(2) {
+          color: $tGreen-1;
+        }
+      }
+      .title__text--red {
+        &:nth-child(2) {
+          color: $tRed-1;
+        }
+      }
+      .title__text--purple {
+        &:nth-child(2) {
+          color: $tPurple-1;
+        }
+      }
+    }
+    .content__download--green {
+      background: $green-1;
+      &:hover {
+        background: transparent;
+        border-color: $green-1;
+      }
+      &:hover .download__text,
+      &:hover .download__icon {
+        color: $tGreen-1;
+      }
+    }
+    .content__download--red {
+      background: $red-1;
+      &:hover {
+        background: transparent;
+        border-color: $red-1;
+      }
+      &:hover .download__text,
+      &:hover .download__icon {
+        color: $tRed-1;
+      }
+    }
+    .content__download--purple {
+      background: $purple-1;
+      &:hover {
+        background: transparent;
+        border-color: $purple-1;
+      }
+      &:hover .download__text,
+      &:hover .download__icon {
+        color: $tPurple-1;
+      }
+    }
+  }
+}
+
+.home--green {
+  &::after {
+    background: $green-1;
+  }
+}
+.home--red {
+  &::after {
+    background: $red-1;
+  }
+}
+.home--purple {
+  &::after {
+    background: $purple-1;
+  }
+}
+
+// RESPONSIVE
+.home {
+  @include respond(largeTablet) {
+    &::after {
+      clip-path: polygon(100% 0, 50% 0, 100% 70%);
+    }
+  }
+  @include respond(smallTablet) {
+    padding: $p-10 * 4 $p-10 $p-5 $p-10;
+    justify-content: center;
+    flex-direction: column-reverse;
+    &::after {
+      clip-path: polygon(100% 0, 0 0, 100% 35%);
+    }
+  }
+  .home__content {
+    @include respond(smallTablet) {
+      width: $w-100;
+    }
+    .content__title {
+      .title__text {
+        &:nth-child(1) {
+          @include respond(smallTablet) {
+            font-size: $h5;
+          }
+        }
+        &:nth-child(2) {
+          @include respond(smallTablet) {
+            font-size: $h3;
+          }
+        }
+      }
+    }
+    .content__inner {
+      @include respond(smallTablet) {
+        margin: $m-10 0;
+      }
+    }
+    .content__download {
+      .download__text {
+        @include respond(smallTablet) {
+          font-size: $body-1;
+        }
+      }
+      .download__icon {
+        @include respond(smallTablet) {
+          font-size: $body-1;
+        }
+      }
+    }
+  }
+  .home__image {
+    @include respond(smallTablet) {
+      display: none;
+    }
+  }
+}

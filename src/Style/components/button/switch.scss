@@ -1,0 +1,59 @@
+.switch-btn {
+  display: flex;
+  align-items: center;
+  outline: none;
+  .switch-btn__control {
+    width: $w-10 * 4;
+    height: $h-10 * 2;
+    margin: 0 $m-5;
+    border-radius: $round;
+    background: $grey-2;
+    position: relative;
+    cursor: pointer;
+    transition: all $fast $function;
+    -webkit-appearance: none;
+    &::after {
+      content: "";
+      width: $w-10 * 1.8;
+      height: $h-10 * 1.8;
+      border-radius: $circle;
+      position: absolute;
+      top: 50%;
+      left: 1.8px;
+      transform: translateY(-50%);
+      transition: all $fast $function;
+    }
+    &:checked::after {
+      left: 20px;
+      background: $secondary;
+    }
+  }
+}
+
+// THEME
+.switch-btn {
+  .switch-btn__control--green {
+    &:checked {
+      background: $green-1;
+    }
+    &::after {
+      background: $green-1;
+    }
+  }
+  .switch-btn__control--red {
+    &:checked {
+      background: $red-1;
+    }
+    &::after {
+      background: $red-1;
+    }
+  }
+  .switch-btn__control--purple {
+    &:checked {
+      background: $purple-1;
+    }
+    &::after {
+      background: $purple-1;
+    }
+  }
+}

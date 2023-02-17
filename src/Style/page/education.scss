@@ -1,0 +1,17 @@
+.education {
+  width: $w-100;
+  height: $h-100;
+  padding: $p-10;
+  transition: all $medium $function;
+}
+
+// THEME
+.education--green {
+  background: $green-1;
+}
+.education--red {
+  background: $red-1;
+}
+.education--purple {
+  background: $purple-1;
+}

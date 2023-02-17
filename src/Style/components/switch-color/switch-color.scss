@@ -1,0 +1,50 @@
+.switch-color {
+  .switch-color__preview {
+    width: $w-10 * 2;
+    height: $h-10 * 2;
+    border-radius: $circle;
+    cursor: pointer;
+    position: relative;
+    transition: all $medium $function;
+  }
+  .switch-color__dropdown {
+    padding: $p-10;
+    background: $dark-2;
+    position: absolute;
+    top: 80%;
+    right: -20%;
+    transition: all $medium $function;
+    .dropdown__item {
+      width: $w-10 * 2;
+      height: $h-10 * 2;
+      border-radius: $circle;
+      cursor: pointer;
+      &:nth-child(1) {
+        background: $green-1;
+      }
+      &:nth-child(2) {
+        margin: $m-10 0;
+        background: $red-1;
+      }
+      &:nth-child(3) {
+        background: $purple-1;
+      }
+    }
+  }
+  .switch-color__dropdown--active {
+    right: 0;
+  }
+}
+
+// THEME
+.switch-color {
+  .switch-color__preview--green {
+    background: $green-1;
+  }
+  .switch-color__preview--red {
+    background: $red-1;
+  }
+  .switch-color__preview--purple {
+    background: $purple-1;
+  }
+}
