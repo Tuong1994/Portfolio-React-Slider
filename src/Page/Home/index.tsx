@@ -10,6 +10,7 @@ const Home: React.FC<HomeProps> = (props) => {
 
   const titleMode = customHooks.useMode("title__text");
   const contentMode = customHooks.useMode("content__inner");
+  const imageMode = customHooks.useMode("image__wrapper");
   const titleTheme = customHooks.useTheme("title__text");
   const homeTheme = customHooks.useTheme("home");
   const downloadBtnTheme = customHooks.useTheme("content__download");
@@ -47,11 +48,13 @@ const Home: React.FC<HomeProps> = (props) => {
       </div>
 
       <div className="home__image">
-        <img
-          className="image__view"
-          src="assets/images/avatar.jpg"
-          alt="avatar"
-        />
+        <div className={`image__wrapper ${imageMode}`}>
+          <img
+            className="wrapper__view"
+            src="assets/images/avatar.jpg"
+            alt="avatar"
+          />
+        </div>
       </div>
     </div>
   );

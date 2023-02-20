@@ -7,6 +7,7 @@
   left: -20%;
   z-index: 10;
   display: none;
+  overflow-y: auto;
   transition: all $medium $function;
   .slider-menu__header {
     padding: $p-10;

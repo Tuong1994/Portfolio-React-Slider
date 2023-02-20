@@ -13,7 +13,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    clip-path: polygon(100% 0, 0 0, 100% 60%);
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 10%);
     z-index: -1;
     transition: all $medium $function;
   }
@@ -66,13 +66,27 @@
     width: $w-100 - 60;
     display: flex;
     justify-content: center;
-    .image__view {
-      width: $w-10 * 25;
-      height: $h-10 * 25;
-      object-fit: cover;
-      object-position: center;
+    position: relative;
+    .image__wrapper {
+      padding: $p-10;
+      border: 5px solid transparent;
       border-top-left-radius: $circle;
       border-bottom-right-radius: $circle;
+      transition: all $medium $function;
+      .wrapper__view {
+        width: $w-10 * 25;
+        height: $h-10 * 25;
+        object-fit: cover;
+        object-position: center;
+        border-top-left-radius: $circle;
+        border-bottom-right-radius: $circle;
+      }
+    }
+    .image__wrapper--dark {
+      border-color: $secondary;
+    }
+    .image__wrapper--light {
+      border-color: $primary;
     }
   }
 }
@@ -164,6 +178,11 @@
       clip-path: polygon(100% 0, 0 0, 100% 35%);
     }
   }
+  @include respond(phone) {
+    &::after {
+      clip-path: polygon(0 0, 100% 0, 100% 20%, 0 10%);
+    }
+  }
   .home__content {
     @include respond(smallTablet) {
       width: $w-100;
@@ -188,6 +207,9 @@
       }
     }
     .content__download {
+      @include respond(smallTablet) {
+        margin-top: $m-5;
+      }
       .download__text {
         @include respond(smallTablet) {
           font-size: $body-1;

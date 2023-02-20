@@ -11,8 +11,8 @@
       line-height: $h-10 * 5;
       transition: all $medium $function;
       @include respond(tablet) {
-        font-size: $h5;
-        line-height: $h-10 * 2.5;
+        font-size: $h6;
+        line-height: $h-10 * 2;
       }
     }
     .wrapper__line {
@@ -37,7 +37,7 @@
     }
   }
   @include respond(tablet) {
-    height: $h-10 * 2.5;
+    height: $h-10 * 2;
   }
 }
 

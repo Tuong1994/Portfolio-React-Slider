@@ -1,0 +1,47 @@
+.content-header {
+  margin-bottom: $m-10 * 2;
+  position: relative;
+  &::before {
+    content: "";
+    width: $w-100 - 70;
+    height: 2px;
+    background: $secondary;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+  }
+  &::after {
+    content: "";
+    width: $w-100 - 90;
+    height: 2px;
+    background: $secondary;
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+  }
+  .content-header__title {
+    font-size: $h3;
+    font-weight: $semiBold;
+  }
+}
+
+// RESPONSIVE
+.content-header {
+  &::before {
+    @include respond(largePhone) {
+      height: 1px;
+      bottom: -5px;
+    }
+  }
+  &::after {
+    @include respond(largePhone) {
+      height: 1px;
+      bottom: -10px;
+    }
+  }
+  .content-header__title {
+    @include respond(largePhone) {
+      font-size: $h6;
+    }
+  }
+}

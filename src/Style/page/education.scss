@@ -1,8 +1,49 @@
 .education {
   width: $w-100;
   height: $h-100;
-  padding: $p-10;
+  padding: $p-10 * 5;
   transition: all $medium $function;
+  .education__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .content__item {
+      width: $w-100 / 2.1;
+      height: $h-10 * 25;
+      padding: $p-10 * 2;
+      border: 1px solid $secondary;
+      border-top-left-radius: $round;
+      border-bottom-right-radius: $round;
+      transition: all $medium $function;
+      &:nth-child(2) {
+        margin-top: $m-10 * 8;
+      }
+      &:hover {
+        background: $primary;
+        border-color: $primary;
+      }
+      .item__title {
+        padding-bottom: $p-10;
+        font-size: $h6;
+        border-bottom: 1px solid $secondary;
+      }
+      .item__content {
+        padding: $p-10;
+        .content__detail {
+          margin: $m-10 0;
+          display: flex;
+          .detail__icon {
+            width: $w-10 * 2;
+            margin-right: $m-10;
+            font-size: $subtitle;
+          }
+          .detail__text {
+            font-size: $subtitle;
+          }
+        }
+      }
+    }
+  }
 }
 
 // THEME
@@ -14,4 +55,44 @@
 }
 .education--purple {
   background: $purple-1;
+}
+
+// RESPONSIVE
+.education {
+  @include respond(largePhone) {
+    padding: $p-10;
+  }
+  .education__content {
+    @include respond(largePhone) {
+      flex-direction: column;
+    }
+    .content__item {
+      @include respond(largePhone) {
+        width: $w-100;
+      }
+      .item__title {
+        @include respond(largePhone) {
+          font-size: $default;
+          padding-bottom: $p-5;
+        }
+      }
+      .item__content {
+        @include respond(largePhone) {
+          padding: $p-10;
+        }
+        .content__detail {
+          .detail__icon {
+            @include respond(largePhone) {
+              font-size: $body-2;
+            }
+          }
+          .detail__text {
+            @include respond(largePhone) {
+              font-size: $body-2;
+            }
+          }
+        }
+      }
+    }
+  }
 }

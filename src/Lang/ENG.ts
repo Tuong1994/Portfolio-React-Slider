@@ -14,6 +14,9 @@ export const Eng = {
         "I want to work in a professional programming environment, where I can develop my professional skills, learn new programming knowledge to successfully complete the assigned work. In the next 2 years vision, I strive to become a fullstack developer and aim to become a tech leader in 5 years.",
       download: "Download CV",
     },
+    education: {
+      title: "Education",
+    },
   },
 };
 

@@ -1,0 +1,32 @@
+.card-custom {
+  width: $w-100;
+  overflow: hidden;
+  border-top-right-radius: $round;
+  border-bottom-left-radius: $round;
+  box-shadow: -5px 5px 5px $green-2;
+  .card-custom__header {
+    display: flex;
+    position: relative;
+    &::after {
+        content: "";
+        width: $w-10 * 2;
+        height: $h-100 + 10;
+        background: $primary;
+        position: absolute;
+        top: 0;
+        right: 40px;
+        transform: skew(20deg);
+    }
+    .header__title {
+      width: $w-100;
+      padding: $p-10;
+      margin: 0;
+      font-size: $subtitle;
+      background: $green-1;
+    }
+  }
+  .card-custom__body {
+    padding: $p-10;
+    background: $primary;
+  }
+}

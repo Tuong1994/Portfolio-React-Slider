@@ -96,20 +96,19 @@
     position: relative;
     .container__header {
       width: $w-100;
+      height: $h-100 - 90;
       padding: $p-10;
       border-bottom: 0.5px solid transparent;
       background: transparent;
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: relative;
       z-index: 10;
       transition: all $medium $function;
       .header__button {
-        width: $w-10 * 3;
-        height: $h-10 * 3;
+        width: $w-10 * 2.5;
+        height: $h-10 * 2.5;
         background: transparent;
         border: 1px solid transparent;
         display: flex;
@@ -152,7 +151,7 @@
     }
     .container__slider {
       width: $w-100;
-      height: $h-100;
+      height: $h-100 - 10;
       .slider__item {
         width: $w-100;
         height: $h-100;
