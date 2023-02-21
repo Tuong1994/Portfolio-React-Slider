@@ -59,36 +59,30 @@
 
 // RESPONSIVE
 .education {
-  @include respond(largePhone) {
+  @include respond(smallTablet) {
     padding: $p-10;
   }
   .education__content {
-    @include respond(largePhone) {
-      flex-direction: column;
+    @include respond(smallTablet) {
+      display: none;
     }
     .content__item {
-      @include respond(largePhone) {
-        width: $w-100;
+      @include respond(laptop) {
+        height: auto;
       }
       .item__title {
-        @include respond(largePhone) {
-          font-size: $default;
-          padding-bottom: $p-5;
-        }
+        font-size: $subtitle;
       }
       .item__content {
-        @include respond(largePhone) {
-          padding: $p-10;
-        }
         .content__detail {
           .detail__icon {
-            @include respond(largePhone) {
-              font-size: $body-2;
+            @include respond(largeTablet) {
+              font-size: $body-1;
             }
           }
           .detail__text {
-            @include respond(largePhone) {
-              font-size: $body-2;
+            @include respond(largeTablet) {
+              font-size: $body-1;
             }
           }
         }

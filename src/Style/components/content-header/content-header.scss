@@ -1,47 +1,59 @@
 .content-header {
+  width: $w-100;
   margin-bottom: $m-10 * 2;
-  position: relative;
-  &::before {
-    content: "";
-    width: $w-100 - 70;
-    height: 2px;
-    background: $secondary;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-  }
-  &::after {
-    content: "";
-    width: $w-100 - 90;
-    height: 2px;
-    background: $secondary;
-    position: absolute;
-    left: 0;
-    bottom: -20px;
-  }
   .content-header__title {
     font-size: $h3;
     font-weight: $semiBold;
+    transition: all $medium $function;
+  }
+  .content-header__line {
+    height: 2px;
+    background: $secondary;
+    transition: all $medium $function;
+    &:nth-child(2) {
+      width: $w-100 - 70;
+      margin-bottom: $m-10;
+    }
+    &:nth-child(3) {
+      width: $w-100 - 90;
+    }
+  }
+}
+
+// MODE
+.content-header--dark {
+  .content-header__title {
+    color: $tPrimary;
+  }
+  .content-header__line {
+    background: $secondary;
+  }
+}
+
+.content-header--light {
+  .content-header__title {
+    color: $tSecondary;
+  }
+  .content-header__line {
+    background: $primary;
   }
 }
 
 // RESPONSIVE
 .content-header {
-  &::before {
-    @include respond(largePhone) {
-      height: 1px;
-      bottom: -5px;
-    }
-  }
-  &::after {
-    @include respond(largePhone) {
-      height: 1px;
-      bottom: -10px;
-    }
-  }
   .content-header__title {
+    @include respond(laptop) {
+      font-size: $h5;
+    }
     @include respond(largePhone) {
       font-size: $h6;
+    }
+  }
+  .content-header__line {
+    &:nth-child(2) {
+      @include respond(laptop) {
+        margin-bottom: $m-5;
+      }
     }
   }
 }

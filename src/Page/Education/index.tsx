@@ -1,6 +1,7 @@
 import React from "react";
 import * as customHooks from "../../Hooks";
 import * as Components from "../../Components";
+import * as Responsive from "../../Responsive";
 import useLangStore from "../../Store/Lang";
 import utils from "../../Utils";
 
@@ -26,6 +27,8 @@ const list = [
     },
   },
 ];
+
+export type IEducations = typeof list;
 
 const Education: React.FC<EducationProps> = (props) => {
   const educationTheme = customHooks.useTheme("education");
@@ -56,6 +59,7 @@ const Education: React.FC<EducationProps> = (props) => {
           </div>
         ))}
       </div>
+      <Responsive.EducationContent list={list} />
     </div>
   );
 };

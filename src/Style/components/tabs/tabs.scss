@@ -1,0 +1,112 @@
+.tabs {
+  width: $w-100;
+  padding: $p-10;
+  border: 1px solid $secondary;
+  border-top-left-radius: $round;
+  border-bottom-right-radius: $round;
+  .tabs__title {
+    width: $w-100;
+    display: flex;
+    .title__item {
+      width: $w-100 / 2;
+      padding: $p-10;
+      text-align: center;
+      transition: all $medium $function;
+      cursor: pointer;
+    }
+  }
+  .tabs__indicator {
+    height: 2px;
+    position: relative;
+    left: 0;
+    transition: all $medium $function;
+    &::after {
+      content: "";
+      width: $w-100 - 50;
+      height: $h-100;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transition: all $medium $function;
+      transform: translateX(-50%);
+    }
+  }
+  .tabs__content {
+    margin-top: $m-10 * 2;
+    .content__item {
+      display: none;
+    }
+    .content__item--active {
+      display: block;
+      animation: fadeIn 1s linear 1;
+    }
+  }
+}
+
+// MODE
+.tabs--dark {
+  border-color: $secondary;
+  .tabs__title {
+    .title__item {
+      color: $tPrimary;
+    }
+  }
+  .tabs__indicator {
+    &::after {
+      background: $secondary;
+    }
+  }
+}
+
+.tabs--light {
+  border-color: $primary;
+  .tabs__title {
+    .title__item {
+      color: $tSecondary;
+    }
+  }
+  .tabs__indicator {
+    &::after {
+      background: $primary;
+    }
+  }
+}
+
+// THEME
+.tabs {
+  .tabs__title {
+    .title__item--green {
+      color: $tGreen-1;
+    }
+    .title__item--red {
+      color: $tRed-1;
+    }
+    .title__item--purple {
+      color: $tPurple-1;
+    }
+  }
+  .tabs__indicator--green {
+    &::after {
+      background: $green-1;
+    }
+  }
+  .tabs__indicator--red {
+    &::after {
+      background: $red-1;
+    }
+  }
+  .tabs__indicator--purple {
+    &::after {
+      background: $purple-1;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

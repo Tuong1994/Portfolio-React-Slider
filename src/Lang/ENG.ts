@@ -17,6 +17,9 @@ export const Eng = {
     education: {
       title: "Education",
     },
+    skills: {
+      title: "Skills",
+    }
   },
 };
 

@@ -6,6 +6,7 @@ import Translate from "./Translate";
 import SwitchColor from "./SwitchColor";
 import TypingText from "./TypingText";
 import ContentHeader from "./ContentHeader";
+import Tabs from "./Tabs";
 
 export {
   Slider,
@@ -16,4 +17,5 @@ export {
   SwitchColor,
   TypingText,
   ContentHeader,
+  Tabs,
 };

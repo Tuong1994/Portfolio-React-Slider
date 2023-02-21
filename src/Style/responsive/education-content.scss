@@ -1,0 +1,57 @@
+.education-content {
+  width: $w-100;
+  display: none;
+  .education-content__title {
+    width: $w-100;
+    display: flex;
+    .title__item {
+      width: $w-100 / 2;
+      padding: $p-10;
+      text-align: center;
+    }
+  }
+  .education-content__indicator {
+    width: $w-100 / 2;
+    height: 2px;
+    background: $secondary;
+    position: relative;
+    left: 0;
+    transition: all $medium $function;
+  }
+  .education-content__detail {
+    margin-top: $m-10 * 2;
+    .detail__item {
+      display: none;
+      padding: $p-10;
+      border: 1px solid $secondary;
+      border-top-left-radius: $round;
+      border-bottom-right-radius: $round;
+      .item__inner {
+        display: flex;
+        padding: $p-10 0;
+        .inner__icon {
+          width: $w-10 * 2;
+        }
+        .inner__text {
+          margin-left: $m-10;
+        }
+      }
+    }
+    .detail__item--active {
+      display: block;
+      animation: fadeIn 1s linear 1;
+    }
+  }
+  @include respond(smallTablet) {
+    display: block;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
