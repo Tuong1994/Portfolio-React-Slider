@@ -1,7 +1,6 @@
 .tabs {
   width: $w-100;
   padding: $p-10;
-  border: 1px solid $secondary;
   border-top-left-radius: $round;
   border-bottom-right-radius: $round;
   .tabs__title {
@@ -24,6 +23,7 @@
       content: "";
       width: $w-100 - 50;
       height: $h-100;
+      background: $secondary;
       position: absolute;
       top: 0;
       left: 50%;
@@ -41,6 +41,10 @@
       animation: fadeIn 1s linear 1;
     }
   }
+}
+
+.tabs--border {
+  border: 1px solid $secondary;
 }
 
 // MODE

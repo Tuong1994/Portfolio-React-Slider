@@ -1,6 +1,7 @@
 import IconBar from "./IconBar";
 import IconFile from "./IconFile";
 import IconMoon from "./IconMoon";
+import IconUser from "./IconUser";
 import IconBook from "./IconBook";
 import IconPhone from "./IconPhone";
 import IconHouse from "./IconHouse";
@@ -8,6 +9,7 @@ import IconSchool from "./IconSchool";
 import IconAngleUp from "./IconAngleUp";
 import IconCalendar from "./IconCalendar";
 import IconDownload from "./IconDownload";
+import IconBuilding from "./IconBuilding";
 import IconAngleDown from "./IconAngleDown";
 import IconLightBulb from "./IconLightBulb";
 import IconBriefCase from "./IconBriefCase";
@@ -21,12 +23,14 @@ export {
   IconFile,
   IconMoon,
   IconBook,
+  IconUser,
   IconPhone,
   IconHouse,
   IconSchool,
   IconAngleUp,
   IconCalendar,
   IconDownload,
+  IconBuilding,
   IconLightBulb,
   IconBriefCase,
   IconAngleDown,

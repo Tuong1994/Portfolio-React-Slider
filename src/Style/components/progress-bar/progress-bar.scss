@@ -1,0 +1,41 @@
+.progress-bar {
+  width: $w-100;
+  height: 8px;
+  border-radius: $round;
+  background: $grey-1;
+  position: relative;
+  overflow: hidden;
+  .progress-bar__percent {
+    height: $h-100;
+    border-radius: $round;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all $medium $function;
+  }
+}
+
+// THEME
+.progress-bar--green {
+  .progress-bar__percent {
+    background: $green-1;
+  }
+}
+.progress-bar--red {
+  .progress-bar__percent {
+    background: $red-1;
+  }
+}
+.progress-bar--purple {
+  .progress-bar__percent {
+    background: $purple-1;
+  }
+}
+
+// RESPONSIVE
+.progress-bar {
+  @include respond(smallTablet) {
+    height: 5px;
+  }
+}

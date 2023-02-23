@@ -5,4 +5,71 @@
   .skills__title {
     margin-bottom: $m-10 * 2;
   }
+  .skills__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .inner__item {
+      width: $w-100 / 2.1;
+      margin: $m-10 * 1.5 0;
+      padding: $p-10 $p-10 * 3;
+      border-radius: $round;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      transition: all $medium $function;
+      .item__title {
+        font-weight: $semiBold;
+        margin-bottom: $m-5;
+        transition: all $medium $function;
+      }
+    }
+  }
+}
+
+// MODE
+.skills {
+  .skills__inner--dark {
+    .inner__item {
+      background: $RGBA-white-1;
+      .item__title {
+        color: $tPrimary;
+      }
+    }
+  }
+  .skills__inner--light {
+    .inner__item {
+      background: $RGBA-black-1;
+      .item__title {
+        color: $tSecondary;
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+.skills {
+  @include respond(laptop) {
+    padding: $p-10 * 2;
+  }
+  @include respond(smallTablet) {
+    padding: $p-10;
+  }
+  .skills__inner {
+    .inner__item {
+      @include respond(laptop) {
+        padding: $p-5 $p-10 * 2;
+        margin: $m-5 0;
+      }
+      @include respond(smallTablet) {
+        padding: $p-5 $p-10 * 2;
+        margin: $m-5 0;
+      }
+      .item__title {
+        @include respond(smallTablet) {
+          font-size: $body-2 - 2;
+          margin-bottom: $m-5 - 2;
+        }
+      }
+    }
+  }
 }

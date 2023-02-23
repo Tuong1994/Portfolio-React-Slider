@@ -3,6 +3,20 @@
   height: $h-100;
   padding: $p-10 * 5;
   transition: all $medium $function;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  &::after {
+    content: "";
+    width: $w-100 * 2;
+    height: $h-100;
+    position: absolute;
+    left: -50%;
+    bottom: -50%;
+    z-index: -1;
+    border-radius: $circle;
+    transition: all $medium $function;
+  }
   .education__content {
     display: flex;
     align-items: center;
@@ -11,16 +25,17 @@
       width: $w-100 / 2.1;
       height: $h-10 * 25;
       padding: $p-10 * 2;
-      border: 1px solid $secondary;
       border-top-left-radius: $round;
       border-bottom-right-radius: $round;
+      background: $RGBA-white-2;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       transition: all $medium $function;
       &:nth-child(2) {
         margin-top: $m-10 * 8;
       }
       &:hover {
-        background: $primary;
-        border-color: $primary;
+        background: $RGBA-black-1;
       }
       .item__title {
         padding-bottom: $p-10;
@@ -49,16 +64,28 @@
 // THEME
 .education--green {
   background: $green-1;
+  &::after {
+    background: $green-2;
+  }
 }
 .education--red {
   background: $red-1;
+  &::after {
+    background: $red-2;
+  }
 }
 .education--purple {
   background: $purple-1;
+  &::after {
+    background: $purple-2;
+  }
 }
 
 // RESPONSIVE
 .education {
+  @include respond(laptop) {
+    padding: $p-10 * 2;
+  }
   @include respond(smallTablet) {
     padding: $p-10;
   }

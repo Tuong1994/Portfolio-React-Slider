@@ -1,0 +1,196 @@
+.experience {
+  width: $w-100;
+  height: $h-100;
+  padding: $p-10 * 5;
+  transition: all $medium $function;
+  .experience__detail {
+    padding: $p-10 * 3;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &::before {
+      content: "";
+      width: $w-10 * 20;
+      height: $h-10 * 10;
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      border-top: 2px solid $secondary;
+      border-left: 2px solid $secondary;
+      border-top-left-radius: $round;
+    }
+    &::after {
+      content: "";
+      width: $w-10 * 20;
+      height: $h-10 * 10;
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      border-bottom: 2px solid $secondary;
+      border-right: 2px solid $secondary;
+      border-bottom-right-radius: $round;
+    }
+    .detail__image {
+      width: $w-100 - 60;
+      display: flex;
+      justify-content: center;
+      .image__wrapper {
+        padding: $p-10 * 2;
+        background: $RGBA-white-1;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-top-left-radius: $circle;
+        border-bottom-right-radius: $circle;
+        .wrapper__view {
+          width: $w-10 * 20;
+          height: $h-10 * 20;
+          border-top-left-radius: $circle;
+          border-bottom-right-radius: $circle;
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+    }
+    .detail__inner {
+      width: $w-100 - 40;
+      .inner__item {
+        display: flex;
+        margin-bottom: $m-10;
+        &:nth-child(1) {
+          .item__icon {
+            width: $w-10 * 2;
+            font-size: $h5;
+          }
+          .item__text {
+            margin-left: $m-10;
+            font-size: $h5;
+            font-weight: $semiBold;
+          }
+        }
+        &:nth-child(2) {
+          .item__icon {
+            width: $w-10 * 2;
+            font-size: $subtitle;
+          }
+          .item__text {
+            margin-left: $m-10;
+            font-size: $subtitle;
+          }
+        }
+      }
+      .inner__list {
+        padding-left: $p-10 * 4;
+        .list__inner {
+          font-size: $default;
+        }
+      }
+    }
+  }
+}
+
+// THEME
+.experience--green {
+  background: $green-1;
+}
+.experience--red {
+  background: $red-1;
+}
+.experience--purple {
+  background: $purple-1;
+}
+
+// REPONSIVE
+.experience {
+  @include respond(laptop) {
+    padding: $p-10 * 2;
+  }
+  @include respond(smallTablet) {
+    padding: $p-10;
+  }
+  .experience__detail {
+    @include respond(laptop) {
+        padding: $p-10 * 2;
+      }
+    @include respond(smallTablet) {
+      padding: 0;
+    }
+    &::before,
+    &::after {
+      @include respond(smallTablet) {
+        display: none;
+      }
+    }
+    .detail__image {
+      @include respond(smallTablet) {
+        display: none;
+      }
+      .image__wrapper {
+        @include respond(laptop) {
+          padding: $p-10;
+        }
+        .wrapper__view {
+          @include respond(laptop) {
+            width: $w-10 * 20;
+            height: $h-10 * 20;
+          }
+        }
+      }
+    }
+    .detail__inner {
+      @include respond(smallTablet) {
+        width: $w-100;
+      }
+      .inner__item {
+        &:nth-child(1) {
+          .item__icon {
+            @include respond(laptop) {
+              font-size: $h6;
+            }
+            @include respond(smallTablet) {
+              font-size: $subtitle;
+            }
+          }
+          .item__text {
+            @include respond(laptop) {
+              font-size: $h6;
+            }
+            @include respond(smallTablet) {
+              font-size: $subtitle;
+            }
+          }
+        }
+        &:nth-child(2) {
+          .item__icon {
+            @include respond(laptop) {
+              font-size: $subtitle;
+            }
+            @include respond(smallTablet) {
+              font-size: $default;
+            }
+          }
+          .item__text {
+            @include respond(laptop) {
+              font-size: $subtitle;
+            }
+            @include respond(smallTablet) {
+              font-size: $default;
+            }
+          }
+        }
+      }
+      .inner__list {
+        @include respond(smallTablet) {
+          padding-left: $p-10 * 3;
+        }
+        .list__inner {
+          @include respond(laptop) {
+            font-size: $body-1;
+          }
+          @include respond(smallTablet) {
+            font-size: $body-2;
+          }
+        }
+      }
+    }
+  }
+}

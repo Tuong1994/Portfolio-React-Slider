@@ -41,6 +41,9 @@
 
 // RESPONSIVE
 .content-header {
+  @include respond(smallTablet) {
+    margin-bottom: $m-5;
+  }
   .content-header__title {
     @include respond(laptop) {
       font-size: $h5;

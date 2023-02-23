@@ -100,6 +100,8 @@
       padding: $p-10;
       border-bottom: 0.5px solid transparent;
       background: transparent;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -142,11 +144,13 @@
       }
     }
     .container__header--dark {
-      background: $primary;
+      // background: $primary;
+      background: $RGBA-black-2;
       border-color: $grey-1;
     }
     .container__header--light {
-      background: $grey-3;
+      // background: $grey-3;
+      background: $RGBA-white-2;
       border-color: transparent;
     }
     .container__slider {
@@ -314,7 +318,7 @@
       }
     }
     @include respond(tablet) {
-      top: 65%;
+      top: 70%;
     }
   }
 }

@@ -68,11 +68,12 @@
     justify-content: center;
     position: relative;
     .image__wrapper {
-      padding: $p-10;
-      border: 5px solid transparent;
+      padding: $p-10 * 2;
       border-top-left-radius: $circle;
       border-bottom-right-radius: $circle;
       transition: all $medium $function;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       .wrapper__view {
         width: $w-10 * 25;
         height: $h-10 * 25;
@@ -83,10 +84,10 @@
       }
     }
     .image__wrapper--dark {
-      border-color: $secondary;
+      background: $RGBA-white-1;
     }
     .image__wrapper--light {
-      border-color: $primary;
+      background: $RGBA-black-1;
     }
   }
 }
@@ -223,8 +224,19 @@
     }
   }
   .home__image {
+    @include respond(laptop) {
+      width: $w-100 - 70;
+    }
     @include respond(smallTablet) {
       display: none;
+    }
+    .image__wrapper {
+      .wrapper__view {
+        @include respond(laptop) {
+          width: $w-10 * 20;
+          height: $h-10 * 20;
+        }
+      }
     }
   }
 }

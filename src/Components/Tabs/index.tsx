@@ -9,16 +9,26 @@ export interface ITabs {
 
 interface TabsProps {
   list?: ITabs[];
+  isBorder?: boolean;
   isMode?: boolean;
   isTheme?: boolean;
+  indicatorId?: string;
+  contentClass?: string;
   containerClass?: string;
   titleClass?: string;
-  contentClass?: string;
 }
 
 const Tabs: React.FC<TabsProps> = (props) => {
-  const { list, isTheme, isMode, containerClass, titleClass, contentClass } =
-    props;
+  const {
+    list,
+    isBorder,
+    isTheme,
+    isMode,
+    indicatorId,
+    containerClass,
+    titleClass,
+    contentClass,
+  } = props;
 
   const [isActive, setIsActive] = React.useState<number>(0);
 
@@ -32,7 +42,9 @@ const Tabs: React.FC<TabsProps> = (props) => {
   const indicatorTheme = customHooks.useTheme("tabs__indicator");
 
   React.useEffect(() => {
-    const indicator = document.getElementById("tabIndicator");
+    const indicator = document.getElementById(
+      indicatorId ? indicatorId : "tabIndicator"
+    );
     if (indicator) {
       indicator.style.left = `calc(calc(100% / ${list?.length}) * ${isActive})`;
     }
@@ -40,9 +52,9 @@ const Tabs: React.FC<TabsProps> = (props) => {
 
   return (
     <div
-      className={`tabs ${isMode && tabsMode} ${
-        containerClass ? containerClass : ""
-      }`}
+      className={`tabs ${isBorder ? "tabs--border" : ""} ${
+        isMode && tabsMode
+      } ${containerClass ? containerClass : ""}`}
     >
       <div className={`tabs__title ${titleClass ? titleClass : ""}`}>
         {list &&
@@ -60,10 +72,8 @@ const Tabs: React.FC<TabsProps> = (props) => {
       </div>
 
       <div
-        id="tabIndicator"
-        className={`tabs__indicator ${
-          isTheme && indicatorTheme
-        }`}
+        id={indicatorId ? indicatorId : "tabIndicator"}
+        className={`tabs__indicator ${isTheme && indicatorTheme}`}
         style={indicatorStyle}
       ></div>
 

@@ -13,19 +13,30 @@
   .education-content__indicator {
     width: $w-100 / 2;
     height: 2px;
-    background: $secondary;
     position: relative;
     left: 0;
     transition: all $medium $function;
+    &::after {
+      content: "";
+      width: $w-100 - 50;
+      height: $h-100;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: $secondary;
+    }
   }
   .education-content__detail {
     margin-top: $m-10 * 2;
     .detail__item {
       display: none;
       padding: $p-10;
-      border: 1px solid $secondary;
       border-top-left-radius: $round;
       border-bottom-right-radius: $round;
+      background: $RGBA-white-2;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       .item__inner {
         display: flex;
         padding: $p-10 0;

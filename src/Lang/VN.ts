@@ -19,7 +19,32 @@ export const Vn = {
     },
     skills: {
       title: "Kỹ năng",
-    }
+      others: "Khác",
+      eng: "Tiếng Anh",
+      ch: "Tiếng Hoa",
+      team: "Làm việc nhóm",
+    },
+    experience: {
+      title: "Kinh nghiệm",
+      company_1: {
+        name: "Công ty CNV Loyalty",
+        position: "Lập trình viên ReactJs",
+        content: {
+          line_1:
+            "Phát triển tính năng, thay đổi giao diện, xây dựng hiệu ứng và tối ưu hóa sử dụng cho người dùng",
+          line_2: "Bảo trì website",
+        },
+      },
+      company_2: {
+        name: "Công ty Cropcom",
+        position: "Lập trình viên ReactJs",
+        content: {
+          line_1:
+            "Phát triển tính năng, thay đổi giao diện, xây dựng hiệu ứng và tối ưu hóa sử dụng cho người dùng",
+          line_2: "Bảo trì website",
+        },
+      },
+    },
   },
 };
 

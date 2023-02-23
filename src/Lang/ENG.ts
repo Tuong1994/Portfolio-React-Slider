@@ -19,7 +19,32 @@ export const Eng = {
     },
     skills: {
       title: "Skills",
-    }
+      others: "Others",
+      eng: "English",
+      ch: "Chinese",
+      team: "Team work",
+    },
+    experience: {
+      title: "Experience",
+      company_1: {
+        name: "CNV Loyalty Company",
+        position: "ReactJs Developer",
+        content: {
+          line_1:
+            "Develop features, change interfaces, build effects and optimize usage for users",
+          line_2: "Maintaince website",
+        },
+      },
+      company_2: {
+        name: "Cropcom Company",
+        position: "ReactJs Developer",
+        content: {
+          line_1:
+            "Develop features, change interfaces, build effects and optimize usage for users",
+          line_2: "Maintaince website",
+        },
+      },
+    },
   },
 };
 

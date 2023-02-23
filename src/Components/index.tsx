@@ -7,6 +7,7 @@ import SwitchColor from "./SwitchColor";
 import TypingText from "./TypingText";
 import ContentHeader from "./ContentHeader";
 import Tabs from "./Tabs";
+import ProgressBar from "./ProgressBar";
 
 export {
   Slider,
@@ -18,4 +19,5 @@ export {
   TypingText,
   ContentHeader,
   Tabs,
+  ProgressBar,
 };
