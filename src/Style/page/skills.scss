@@ -9,8 +9,9 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: $p-10;
     .inner__item {
-      width: $w-100 / 2.1;
+      width: $w-100 / 2.05;
       margin: $m-10 * 1.5 0;
       padding: $p-10 $p-10 * 3;
       border-radius: $round;

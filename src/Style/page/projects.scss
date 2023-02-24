@@ -1,0 +1,136 @@
+.projects {
+  width: $w-100;
+  height: $h-100;
+  padding: $p-10 * 5;
+  transition: all $medium $function;
+  overflow-y: auto;
+  /* width */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $grey-1;
+  }
+  .projects__detail {
+    .detail__item {
+      width: $w-100;
+      margin: $m-10 0;
+      .item__content {
+        padding: $p-10;
+        .content__wrapper {
+          padding: $p-10 $p-10 * 2;
+          border-radius: $round;
+          transition: all $medium $function;
+          .wrapper__inner {
+            margin: $m-5 0;
+            &:nth-child(1) {
+              .inner__icon,
+              .inner__text {
+                font-size: $h6;
+              }
+            }
+            &:nth-child(2),
+            &:nth-child(3), 
+            &:nth-child(4) {
+                padding-left: $p-10 * 3;
+            }
+            .inner__icon {
+              width: $w-10 * 2;
+            }
+            .inner__text {
+              margin-left: $m-10;
+            }
+          }
+          .wrapper__list {
+            padding-left: $p-10 * 5;
+          }
+        }
+      }
+    }
+  }
+}
+
+// MODE
+.projects--dark {
+  background: $primary;
+}
+
+.projects--light {
+  background: $secondary;
+}
+
+// THEME
+.projects--green {
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $green-1;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $green-2;
+  }
+  .projects__detail {
+    .detail__item {
+      .item__content {
+        .content__wrapper {
+          background: $green-1;
+        }
+      }
+    }
+  }
+}
+
+.projects--red {
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $red-1;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $red-2;
+  }
+  .projects__detail {
+    .detail__item {
+      .item__content {
+        .content__wrapper {
+          background: $red-1;
+        }
+      }
+    }
+  }
+}
+
+.projects--purple {
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $purple-1;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $purple-2;
+  }
+  .projects__detail {
+    .detail__item {
+      .item__content {
+        .content__wrapper {
+          background: $purple-1;
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE
+.projects {
+  @include respond(laptop) {
+    padding: $p-10 * 2;
+  }
+  @include respond(smallTablet) {
+    padding: $p-10;
+  }
+}

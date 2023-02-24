@@ -45,6 +45,51 @@ export const Vn = {
         },
       },
     },
+    projects: {
+      title: "Dự án",
+      subtitle_1: "Mô tả",
+      subtitle_2: "Vai trò",
+      subtitle_3: "Công nghệ",
+      project_1: {
+        name: "Hệ thống quản trị khách hàng",
+        company: "CNV Loyalty",
+        descript:
+          " Website quản trị (Đơn hàng, Khách hàng, Ưu đãi, Automation...).",
+        role: "Phân tích, cắt giao diện website, phát triển chức năng, phối hợp team Back End gắn API, bảo trì.",
+        tech: "ReactJs, Typescript",
+      },
+      project_2: {
+        name: "Plugins - Mẫu in",
+        company: "CNV Loyalty",
+        descript:
+          "Website quản trị,  setup mẫu in cho đơn hàng có sản phẩm liên kết.",
+        role: "Phân tích, cắt giao diện website, phát triển chức năng, phối hợp team Back End gắn API, bảo trì.",
+        tech: "ReactJs, Typescript",
+      },
+      project_3: {
+        name: "Plugins - Thư viện ảnh",
+        company: "CNV Loyalty",
+        descript: "Website quản trị, tạo ablum ảnh.",
+        role: "Phân tích, cắt giao diện website, phát triển chức năng, phối hợp team Back End gắn API, bảo trì.",
+        tech: "ReactJs, Typescript",
+      },
+      project_4: {
+        name: "Plugins - Mua giá sỉ",
+        company: "CNV Loyalty",
+        descript:
+          "Website quản trị, setup chương trình mua giá sỉ cho sản phẩm.",
+        role: "Phân tích, cắt giao diện website, phát triển chức năng, phối hợp team Back End gắn API, bảo trì.",
+        tech: "ReactJs, Typescript",
+      },
+      project_5: {
+        name: "Plugins - Mua x được y",
+        company: "CNV Loyalty",
+        descript:
+          "Website quản trị, setup chương trình mua sản phẩm x được tặng sản phẩm y.",
+        role: "Phân tích, cắt giao diện website, phát triển chức năng, phối hợp team Back End gắn API, bảo trì.",
+        tech: "ReactJs, Typescript",
+      },
+    },
   },
 };
 

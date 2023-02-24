@@ -1,0 +1,74 @@
+.accordion {
+  width: $w-100;
+  background: $RGBA-white-3;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: $round;
+  transition: all $medium $function;
+  .accordion__title {
+    padding: $p-10 $p-10 * 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    .title__icon {
+      width: $w-10 * 3;
+      height: $h-10 * 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      background: $secondary;
+      color: $tSecondary;
+      border-radius: $circle;
+      transition: all $medium $function;
+    }
+    .title__icon--rotate {
+      transform: rotate(180deg);
+    }
+  }
+  .accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $medium $function;
+  }
+  .accordion__content--active {
+    max-height: $h-10 * 30;
+    transition: max-height $medium $function;
+  }
+}
+
+// MODE
+.accordion--dark {
+  background: $RGBA-white-3;
+}
+
+.accordion--light {
+  background: $RGBA-black-3;
+}
+
+// THEME
+.accordion--green {
+  .accordion__title {
+    .title__icon {
+      background: $green-1;
+      color: $tPrimary;
+    }
+  }
+}
+.accordion--red {
+  .accordion__title {
+    .title__icon {
+      background: $red-1;
+      color: $tPrimary;
+    }
+  }
+}
+.accordion--purple {
+  .accordion__title {
+    .title__icon {
+      background: $purple-1;
+      color: $tPrimary;
+    }
+  }
+}

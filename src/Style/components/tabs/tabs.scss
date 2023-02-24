@@ -1,14 +1,13 @@
 .tabs {
   width: $w-100;
-  padding: $p-10;
   border-top-left-radius: $round;
   border-bottom-right-radius: $round;
   .tabs__title {
     width: $w-100;
+    padding: $p-10;
     display: flex;
     .title__item {
       width: $w-100 / 2;
-      padding: $p-10;
       text-align: center;
       transition: all $medium $function;
       cursor: pointer;
